@@ -13,15 +13,19 @@ public class RateController {
 	
 	@Value("${lanecount}")
 	String laneCount;
-	
+		
 	@Value("${tollstart}")
 	String tollStart;
+	
+	@Value("${connstring}")
+	String connstring;
 	
 	@RequestMapping("/rate")
 	public String getRate(Model m) {
 		m.addAttribute("rate", rate);
 		m.addAttribute("laneCount", laneCount);
 		m.addAttribute("tollStart", tollStart);
+		m.addAttribute("connstring", connstring);
 	
 		return "rateview";
 	}
